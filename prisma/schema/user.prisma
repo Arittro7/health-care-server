@@ -11,7 +11,7 @@ model User {
     doctor             Doctor?
     patient            Patient?
 
-    @@map("users")
+    @@map("users")  
 }
 
 model Admin {
@@ -57,7 +57,7 @@ model Patient {
     email        String   @unique
     name         String
     profilePhoto String?
-    address      String
+    address      String?        //run npx prisma migrate dev
     isDeleted    Boolean  @default(false)
     createdAt    DateTime @default(now())
     updatedAt    DateTime @updatedAt
