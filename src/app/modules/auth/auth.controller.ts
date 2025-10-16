@@ -9,7 +9,6 @@ interface LoginResult {
   needPasswordChange?: boolean;
 }
 
-
 const login = catchAsync(async(req: Request, res: Response) : Promise<void>=>{
   const result:LoginResult = await authService.login(req.body)
 
@@ -19,14 +18,14 @@ const login = catchAsync(async(req: Request, res: Response) : Promise<void>=>{
     secure: true,
     httpOnly: true,
     sameSite: "none",
-    maxAge: 1000 * 60 * 60 //millisecond * 60 = 60 second * 60 = 60 minute or 1h
+    maxAge: 1000 * 60 * 60 
   })
 
   res.cookie("refreshToken", refreshToken,{
     secure: true,
     httpOnly: true,
     sameSite: "none",
-    maxAge: 1000 * 60 * 60 * 24 * 90 //ms * 60 = 60 sec * 60 = 60 m * 24 = 1d * 90 = 90 day
+    maxAge: 1000 * 60 * 60 * 24 * 90 
   })
   
   sendResponse(res, {
