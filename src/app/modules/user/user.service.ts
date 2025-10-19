@@ -3,7 +3,6 @@ import config from "../../../config";
 import { prisma } from "../../shared/prisma";
 import bcrypt from "bcryptjs";
 import { fileUploader } from "../../helper/fileUploader";
-import catchAsync from "../../shared/catchAsync";
 import { paginationHelper } from "../../helper/paginationHelper";
 import { Prisma } from "@prisma/client";
 import { userSearchableFields } from "./user.constant";
@@ -87,8 +86,7 @@ const createDoctor = async (req: Request) => {
 };
 
 const getAllUser = async (params: any, options: any) => {
-  const { page, limit, skip, sortBy, sortOrder } =
-    paginationHelper.calculatePagination(options);
+  const { page, limit, skip, sortBy, sortOrder } = paginationHelper.calculatePagination(options);
   const { searchTerm, ...filterData } = params;
 
   const andConditions: Prisma.UserWhereInput[] = [];

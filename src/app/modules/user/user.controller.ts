@@ -2,7 +2,6 @@ import { Request, Response } from "express";
 import catchAsync from "../../shared/catchAsync";
 import { userServices } from "./user.service";
 import sendResponse from "../../shared/sendResponse";
-import { prisma } from "../../shared/prisma";
 import pick from "../../helper/pick";
 import { userFilterableFields, userOptionalFields } from "./user.constant";
 
