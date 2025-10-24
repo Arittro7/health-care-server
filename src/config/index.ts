@@ -13,5 +13,6 @@ export default {
         api_key: process.env.CLOUDINARY_API_KEY,
         api_secret: process.env.CLOUDINARY_API_SECRET
     },
-    jwt_secret : process.env.JWT_SECRET
+    jwt_secret : process.env.JWT_SECRET,
+    openRouterApiKey : process.env.OPEN_ROUTER_API_KEY
 }
