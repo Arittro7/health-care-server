@@ -8,6 +8,8 @@ router.get(
     "/",
     DoctorController.getAllFromDB
 )
+// AI Route
+router.post("/suggestion", DoctorController.getAISuggestion)
 
 router.patch(
     "/:id",
@@ -22,5 +24,6 @@ router.delete(
     auth(UserRole.ADMIN),
     DoctorController.deleteFromDB
 );
+
 
 export const DoctorRoutes = router;
