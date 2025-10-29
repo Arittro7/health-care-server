@@ -12,7 +12,7 @@ const insertIntoDB = catchAsync(async (req: Request & {user?:IJWTPayload}, res:R
   sendResponse(res, {
     statusCode: 200,
     success: true,
-    message:"Schedule Deleted Successfully",
+    message:"Schedule Created Successfully",
     data: result
   })
 }) 
