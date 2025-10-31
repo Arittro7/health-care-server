@@ -12,5 +12,25 @@ router.post("/",
   validateRequest(doctorScheduleValidation.createDoctorScheduleValidationSchema),
   DoctorScheduleController.insertIntoDB )
 
+router.get(
+    '/',
+    auth(UserRole.ADMIN, UserRole.DOCTOR, UserRole.PATIENT),
+    DoctorScheduleController.getAllFromDB
+);
+
+router.get(
+    '/my-schedule',
+    auth(UserRole.DOCTOR),
+    DoctorScheduleController.getMySchedule
+)
+
+
+router.delete(
+    '/:id',
+    auth(UserRole.DOCTOR),
+    DoctorScheduleController.deleteFromDB
+);
+
+
 
 export const doctorScheduleRoutes = router
