@@ -14,8 +14,19 @@ export default {
     api_secret: process.env.CLOUDINARY_API_SECRET,
   },
   jwt_secret: process.env.JWT_SECRET,
+  JWT_ACCESS : process.env.JWT_ACCESS_EXPIRES,
+  JWT_REFRESH_SECRET: process.env.JWT_REFRESH_SECRET,
+  JWT_REFRESH_EXPIRES: process.env.JWT_REFRESH_EXPIRES,
+  
   openRouterApiKey: process.env.OPEN_ROUTER_API_KEY,
   STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY,
   CLIENT_URL: process.env.CLIENT_URL,
-  WEBHOOK_SECRET : process.env.WEBHOOK_SECRET
+  WEBHOOK_SECRET : process.env.WEBHOOK_SECRET,
+  RESET_PASS_LINK: process.env.RESET_PASS_LINK,
+  RESET_PASS_TOKEN: process.env.RESET_PASS_TOKEN,
+  RESET_PASS_TOKEN_EXPIRES_IN: process.env.RESET_PASS_TOKEN_EXPIRES_IN,
+  EmailSender:{
+    EMAIL: process.env.EMAIL,
+    APP_PASS: process.env.APP_PASS
+  }
 };

@@ -22,8 +22,8 @@ router.delete(
 );
 
 router.patch(
-    '/:id',
-    auth(UserRole.ADMIN),
+    '/',
+    auth(UserRole.PATIENT),
     PatientController.updateIntoDB
 );
 
